@@ -202,9 +202,8 @@
   
   
   /*========= レイアウトのためのCSS ===============*/
-  
-  body{
-    background:#eee;
+  .slide{
+    margin: 50px;
   }
   
   h2,p {
@@ -227,6 +226,4 @@
     text-decoration: none;
   }
 
-  .slide{
-    margin: 50px;
-  }
+ 
