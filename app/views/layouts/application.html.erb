@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>How</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_tag 'application', 'data-turbolinks-track': 'reload' %>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/css/6-1-7.css">
+  </head>
+
+  <body>
+  <header>
+  <h1>湯～ねるを最大に楽しむ方法</h1>
+  <div class="header-list">
+      <ul>
+        <% if user_signed_in? %>
+        <li><%= link_to "マイページへ", user_path(current_user.id) %></li>
+        <% end %>
+        <li><%= link_to "ホーム", tops_path %></li>
+        <li><%= link_to "新規登録", new_user_registration_path %></li>
+        <% if user_signed_in? %>
+        <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+        <% end %>
+        </ul>
+      </div>
+    </header>
+    <ul class="slider">
+    <li><img src="/assets/u-neru1.jpg" width="400" heigh="300"></li>
+    <li><img src="/assets/u-neru2.jpg" width="400" heigh="300"></li>
+    <li><img src="/assets/u-neru3.jpg" width="400" heigh="300"></li>
+    <li><img src="/assets/u-neru4.jpg" width="400" heigh="300"></li>
+    <li><img src="/assets/u-neru5.jpg" width="400" heigh="300"></li>
+    <li><img src="/assets/u-neru6.jpg" width="400" heigh="300"></li>
+  <!--/slider--></ul>
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-7/js/6-1-7.js"></script>
+  <main>
+  <%= yield %>
+</main>
+
+  <footer>
+  <small>© 2020 ○○○○</small>
+</footer>
+</body>
+</html>
