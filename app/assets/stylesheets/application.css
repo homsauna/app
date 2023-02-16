@@ -68,3 +68,5 @@ header li {
     position: fixed;
     justify-content: flex-end;
   }
+
+  all { font-family: 'Titillium Web', sans-serif; }
